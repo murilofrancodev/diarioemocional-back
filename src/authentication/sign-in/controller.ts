@@ -14,6 +14,6 @@ export const SignInController = async (req: Request, res: Response) => {
       refreshToken,
     });
   } catch (error: any) {
-    res.status(401).send(error.response.data.error.message);
+    res.status(401).send('teste');
   }
 };
