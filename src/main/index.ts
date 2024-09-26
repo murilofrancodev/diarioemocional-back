@@ -1,6 +1,6 @@
 import * as dotenv from "dotenv";
 dotenv.config();
-
+import cors from "cors"; 
 import express from "express";
 import bodyParser from "body-parser";
 import "../config/firebase";
@@ -13,6 +13,8 @@ import { GetEmotionByUserIdController } from "../application/users/emotions/find
 import { PostEmotionsController } from "../application/users/emotions/create/controller";
 
 const app = express();
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
