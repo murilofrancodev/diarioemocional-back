@@ -1,6 +1,6 @@
 import * as dotenv from "dotenv";
 dotenv.config();
-
+import cors from "cors"; 
 import express from "express";
 import bodyParser from "body-parser";
 import "../config/firebase";
@@ -9,6 +9,8 @@ import { verifyToken } from "../middlewares/verify-token";
 import { SignInController } from "../authentication/sign-in/controller";
 
 const app = express();
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
