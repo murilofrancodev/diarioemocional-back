@@ -7,6 +7,7 @@ export const postEmotion = async (userId: string, newEmotion: Emotion) => {
   const emotionsRef = db.collection("emotions");
   const emotionWithId = {
     ...newEmotion,
+    createdAt: new Date().toISOString(),
     emotionId: randomUUID(),
   };
   const querySnapshot = await emotionsRef.where("userId", "==", userId).get();
@@ -29,6 +30,6 @@ export const postEmotion = async (userId: string, newEmotion: Emotion) => {
       updatedAt: new Date().toISOString(),
     });
 
-    return { message: "Emotion added successfully", updatedEmotions };
+    return emotionWithId;
   }
 };
