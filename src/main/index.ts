@@ -31,5 +31,5 @@ app.post("/calendar/entry", PostCalendarEntryController);
 app.get("/emotions/find", GetEmotionByUserIdController);
 app.post("/emotions", PostEmotionsController);
 app.listen(3001, () => {
-  console.log("Server is running on port 3000");
+  console.log("Server is running on port 3001");
 });
